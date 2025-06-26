@@ -1,0 +1,85 @@
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(8px);
+  border-bottom: 3px solid #e65c1a;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  margin: 0;
+  font-family: 'MinhaFonteLocal2', sans-serif;
+  font-size: 1.8rem;
+  color: #e65c1a;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+nav {
+  display: flex;
+  gap: 2.5rem;
+}
+
+nav a {
+  font-family: 'MinhaFonteLocal', cursive;
+  font-weight: 600;
+  font-size: 1.3rem;
+  color: #e65c1a;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  cursor: pointer;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: #e65c1a;
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+nav a:hover {
+  color: #ff7733;
+  transform: scale(1.1);
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  header {
+    padding: 1rem 1.5rem;
+  }
+  nav {
+    gap: 1.5rem;
+  }
+  nav a {
+    font-size: 1.1rem;
+  }
+  header h1 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 450px) {
+  nav {
+    gap: 1rem;
+  }
+  nav a {
+    font-size: 1rem;
+  }
+}
